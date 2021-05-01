@@ -163,18 +163,9 @@ body{
     border-bottom-right-radius: 10px;
 }
 
-.profile-border-imps{
-    box-shadow: 0 0 0 3px var(--imps-blue-text);
+.profile-border{
+    box-shadow: 0 0 0 3px grey;
 }
-
-.profile-border-gas{
-    box-shadow: 0 0 0 3px var(--gas-orange-text);
-}
-
-.profile-border-ems{
-    box-shadow: 0 0 0 3px var(--ems-green-text);
-}
-
 .profile{
     cursor: pointer;
     -webkit-user-drag: none;
