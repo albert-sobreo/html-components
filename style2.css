@@ -1,11 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
-:root{
-    --imps-blue-text: #339de9;
-    --gas-orange-text: #FF5C00;
-    --ems-green-text: #28D31A;
-}
-
 .form-container .form-container-1{
     background: white;
     border-radius: 15px;
@@ -21,7 +15,6 @@
 body{
     font-family: 'Poppins', sans-serif;
     min-width: 720px;
-    font-size: 12px;
 }
 
 .form-control{
@@ -95,39 +88,39 @@ body{
     box-shadow: 0px 4px 15px rgba(0,0,0,0.15);
 }
 
-.font-thin{
+.font-w-100{
     font-weight: 100;
 }
 
-.font-extralight{
+.font-w-200{
     font-weight: 200;
 }
 
-.font-light{
+.font-w-300{
     font-weight: 300;
 }
 
-.font-regular{
+.font-w-400{
     font-weight: 400;
 }
 
-.font-medium{
+.font-w-500{
     font-weight: 500;
 }
 
-.font-semibold{
+.font-w-600{
     font-weight: 600;
 }
 
-.font-bold{
+.font-w-700{
     font-weight: 700;
 }
 
-.font-extrabold{
+.font-w-800{
     font-weight: 800;
 }
 
-.font-black{
+.font-w-900{
     font-weight: 900;
 }
 
@@ -141,10 +134,6 @@ body{
 
 .b-radius-15{
     border-radius: 15px;
-}
-
-.b-radius-circle{
-    border-radius: 999px;
 }
 
 .b-tl-radius-10{
@@ -163,70 +152,6 @@ body{
     border-bottom-right-radius: 10px;
 }
 
-.profile-border-imps{
-    box-shadow: 0 0 0 3px var(--imps-blue-text);
-}
-
-.profile-border-gas{
-    box-shadow: 0 0 0 3px var(--gas-orange-text);
-}
-
-.profile-border-ems{
-    box-shadow: 0 0 0 3px var(--ems-green-text);
-}
-
-.profile{
-    cursor: pointer;
-    -webkit-user-drag: none;
-    user-select: none;
-}
-
-.profile-card, .app-card{
-    display:none; 
-    position:absolute; 
-    top:50px; 
-    right:20px; 
-    background: white;
-    -webkit-user-drag: none;
-    user-select: none;
-}
-
-.app-card-links{
-    box-shadow: 0px 4px 10px rgba(0,0,0,0.10);
-    transition: 100ms;
-}
-
-.app-card-links:hover{
-    transition: 100ms;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-}
-
-.profile-my-name{
-    color: black;
-}
-
-.profile-my-position{
-    color: #a6a6a6;
-    font-size: 11px;
-}
-
-.profile-card-container{
-    background: #EAEAEA;
-    border-radius: 8px;
-}
-
-.icon-selector, .notification{
-    cursor: pointer;
-    color: #AAAAAA;
-    
-    -webkit-user-drag: none;
-    user-select: none;
-}
-
-.notification-bell{
-    color: #AAAAAA;
-}
-
 .c-nav{
     height: 42px;
     background: white;
@@ -239,7 +164,7 @@ body{
 .c-nav-item{
     display: inline-flex;
     align-items: center;
-    width: 11%;
+    width: 10%;
 }
 
 .c2-nav-item{
@@ -257,24 +182,8 @@ body{
 .c-nav-links, .navbar-nav, .navbar{
     display: inline-flex;
     align-items: center;
-    width: 79%;
-    -webkit-user-drag: none;
-    user-select: none;
+    width: 80%;
 }
-
-.c-nav-links a, .navbar a{
-    text-decoration: none;
-    color: black;
-}
-
-.imps-nav a:hover{
-    color: var(--imps-blue-text);
-}
-
-.gas-nav a:hover{
-    color: var(--gas-orange-text);
-}
-
 .navbar div, .navbar2 div{
     cursor: pointer;
 }
@@ -291,7 +200,7 @@ body{
 }
 
 .c-nav-links div:hover{
-    color: var(--imps-blue-text);
+    color: #339DE9;
 }
 .c-nav-links div:active{
     transition: 0ms;
@@ -299,13 +208,11 @@ body{
 }
 
 .active{
-    color: var(--imps-blue-text) !important;
+    color: #339DE9 !important;
 }
 
 .logo{
     cursor: pointer;
-    -webkit-user-drag: none;
-    user-select: none;
 }
 .btn{
     display: inline-flex;
@@ -360,7 +267,7 @@ body{
 }
 
 .btn-primary{
-    background-color: var(--imps-blue-text);
+    background-color: #339de9;
     border: 0;
 }
 
@@ -407,14 +314,9 @@ body{
     width: auto;
 }
 
-.d-item-gas:hover{
-    background: var(--gas-orange-text);
-    color: white !important;
-}
-
-.d-item-imps:hover{
-    background-color: var(--imps-blue-text);
-    color: white !important;
+.dropdown-item:hover{
+    background:#0095ff;
+    color: white;
 }
 
 .reject{

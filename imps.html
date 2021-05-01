@@ -11,35 +11,36 @@
 </head>
 <body>
 <!-- Main Body of NavBar -->
-<div class="c-nav d-flex mb-3 font-bold align-items-center">
+<div class="c-nav d-flex mb-3 font-bold">
     <!-- Logo Container -->
     <div class="c-nav-item justify-content-start">
-        <img src="imps.svg" class="logo">
+        <img src="IMPS.svg" class="logo">
     </div>
 
     <!-- Tabs Container -->
-    <div class="c-nav-links justify-content-center font-semibold">
+    <div class="imps-nav justify-content-center font-semibold navbar">
         <a href="#" class="mx-3">Inventory</a>
         <a href="#" class="mx-3">Job Order</a>
         <a href="#" class="mx-3">Transfer</a>
         <a href="#" class="mx-3">Adjustments</a>
         <a href="#" class="mx-3">Deliveries</a>
-        <a href="#" class="mx-3">Warehoue</a>
+        <a href="#" class="mx-3">Warehouse</a>
         <a href="#" class="mx-3">Logs</a>
         <a href="#" class="mx-3">Reports</a>
         <a href="#" class="mx-3">Approvals</a>
+        <a href="#" class="mx-3">Purchase Reconciliation</a>
     </div>
 
     <!-- Nav Controls -->
     <div class="c-nav-item justify-content-end align-items-center">
         <div class="icon-selector mx-3" onclick="toggleAppCard()">
-            <img src="iconselector.svg" alt="" height="20">
+            <img src="iconselector.svg" alt="" height="20" id="appToggler">
         </div>
         <div class="notification mx-3">
-            <img src="bell-solid 1.svg" alt="" height="20" class="notification-bell">
+            <img src="bell-solid 1.svg" alt="" height="20" class="notification-bell" id="notificationToggler">
         </div>
         <div class="profile mx-3" onclick="toggleProfile()">
-            <img src="person.png" alt="" height="20" class="profile-border b-radius-circle">
+            <img src="person.png" alt="" height="20" class="profile-border-imps b-radius-circle" id="profileToggler">
         </div>
     </div>
 
@@ -47,7 +48,7 @@
     <div class="profile-card b-radius-15 box-shadow-medium p-2 border" id="profileCard" style="display: none;">
         <div class="flex flex-column profile-card-container py-2 px-4 b-radius-5 justify-content-center align-items-center border">
             <div class="mb-2">
-                <img class="profile-border b-radius-circle" src="person.png" alt="" height="40" width="40">
+                <img class="profile-border-imps b-radius-circle" src="person.png" alt="" height="40" width="40">
             </div>
             <div class="profile-my-name mt-1">
                 <span>Juan Dela Cruz</span>
@@ -56,7 +57,6 @@
                 <span>Branch Manager</span>
             </div>
         </div>
-
         <div class="mt-2 flex flex-column profile-card-container py-2 px-4 b-radius justify-content-center align-items-center border">
             Logout
         </div>
@@ -89,6 +89,9 @@
         //Add Event listener for mouseup
         //Hide all cards on outside click
         document.addEventListener('mouseup', function(event){
+            if(event.target.id == 'appToggler' || event.target.id == 'notificationToggler' || event.target.id == 'profileToggler'){
+                return
+            }
             if (!cards.profileCard.contains(event.target) || !cards.appCard.contains(event.target)){
                 profileCard.style.display = 'none'
                 appCard.style.display = 'none'
