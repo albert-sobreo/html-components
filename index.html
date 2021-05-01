@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+<!-- Main Body of NavBar -->
+<div class="c-nav d-flex mb-3 font-bold align-items-center">
+    <!-- Logo Container -->
+    <div class="c-nav-item justify-content-start">
+        <img src="imps.svg" class="logo">
+    </div>
+
+    <!-- Tabs Container -->
+    <div class="c-nav-links justify-content-center font-semibold">
+        <a href="#" class="mx-3">Inventory</a>
+        <a href="#" class="mx-3">Job Order</a>
+        <a href="#" class="mx-3">Transfer</a>
+        <a href="#" class="mx-3">Adjustments</a>
+        <a href="#" class="mx-3">Deliveries</a>
+        <a href="#" class="mx-3">Warehoue</a>
+        <a href="#" class="mx-3">Logs</a>
+        <a href="#" class="mx-3">Reports</a>
+        <a href="#" class="mx-3">Approvals</a>
+    </div>
+
+    <!-- Nav Controls -->
+    <div class="c-nav-item justify-content-end align-items-center">
+        <div class="icon-selector mx-3" onclick="toggleAppCard()">
+            <img src="iconselector.svg" alt="" height="20">
+        </div>
+        <div class="notification mx-3">
+            <img src="bell-solid 1.svg" alt="" height="20" class="notification-bell">
+        </div>
+        <div class="profile mx-3" onclick="toggleProfile()">
+            <img src="person.png" alt="" height="20" class="profile-border b-radius-circle">
+        </div>
+    </div>
+
+    <!-- Profile Card -->
+    <div class="profile-card b-radius-15 box-shadow-medium p-2 border" id="profileCard" style="display: none;">
+        <div class="flex flex-column profile-card-container py-2 px-4 b-radius-5 justify-content-center align-items-center border">
+            <div class="mb-2">
+                <img class="profile-border b-radius-circle" src="person.png" alt="" height="40" width="40">
+            </div>
+            <div class="profile-my-name mt-1">
+                <span>Juan Dela Cruz</span>
+            </div>
+            <div class="profile-my-position">
+                <span>Branch Manager</span>
+            </div>
+        </div>
+
+        <div class="mt-2 flex flex-column profile-card-container py-2 px-4 b-radius justify-content-center align-items-center border">
+            Logout
+        </div>
+    </div>
+
+    <!-- App Card -->
+    <div class="app-card b-radius-15 box-shadow-medium p-3 border" id="appCard" style="display: none;">
+        <div class="flex flex-column app-card-links align-items-center justify-content-center mb-2 py-3 px-4 b-radius-10">
+            <img src="Dashboard.svg" alt="">
+        </div>
+        <div class="flex flex-column app-card-links align-items-center justify-content-center my-3 py-3 px-4 b-radius-10">
+            <img src="imps.svg" alt="">
+        </div>
+        <div class="flex flex-column app-card-links align-items-center justify-content-center my-3 py-3 px-4 b-radius-10">
+            <img src="GAS.svg" alt="">
+        </div>
+        <div class="flex flex-column app-card-links align-items-center justify-content-center mt-3 py-3 px-4 b-radius-10">
+            <img src="EMS.svg" alt="">
+        </div>
+    </div>
+
+    <!-- JS -->
+    <script>
+        //initialize Navbar Profile Card and App Card
+        var cards = {
+            profileCard: document.getElementById('profileCard'),
+            appCard: document.getElementById('appCard')
+        }
+
+        //Add Event listener for mouseup
+        //Hide all cards on outside click
+        document.addEventListener('mouseup', function(event){
+            if (!cards.profileCard.contains(event.target) || !cards.appCard.contains(event.target)){
+                profileCard.style.display = 'none'
+                appCard.style.display = 'none'
+            }
+        })
+
+        //Toggles Profile Card
+        toggleProfile = () => {
+            if (cards.profileCard.style.display == "none" || cards.appCard.style.display == 'block'){
+                profileCard.style.display = 'block'
+                appCard.style.display = 'none'
+            } else {
+                profileCard.style.display = 'none'
+            }
+        }
+
+        //Toggles App Card
+        toggleAppCard = () => {
+            if (cards.appCard.style.display == 'none' || cards.profileCard.style.display == 'block'){
+                appCard.style.display = 'block'
+                profileCard.style.display = 'none'
+            } else {
+                appCard.style.display = 'none'
+            }
+        }
+    </script>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+</body>
+</html>
