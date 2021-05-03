@@ -289,8 +289,17 @@ body{
     color: #0a69ad;
 }
 
-.active{
+.active-imps{
     color: var(--imps-blue-text) !important;
+}
+
+.active-gas{
+    color: var(--gas-orange-text) !important;
+
+}
+
+.active-ems{
+    color: var(--ems-green-text) !important;
 }
 
 .logo{
@@ -642,4 +651,15 @@ body{
 
 .home-branch-revenue{
     color: #5363F9
+}
+
+.nav-hyperlinks-gas a{
+    text-decoration: none;
+    margin-left: 5px;
+    margin-right: 5px;
+    color: black;
+}
+
+.nav-hyperlinks-gas a:hover{
+    color: var(--gas-orange-text);
 }

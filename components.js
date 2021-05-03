@@ -42,7 +42,9 @@ class AppCard extends HTMLElement{
 }
 
 class NavbarGAS extends HTMLElement{
-    connectedCallback(){
+    render(){
+        this.active = this.getAttribute('active');
+
         this.innerHTML = /*javascript*/`
         <div class="c-nav d-flex mb-3 font-bold" id="main-nav">
             <!-- Logo Container -->
@@ -54,7 +56,7 @@ class NavbarGAS extends HTMLElement{
             <div class="gas-nav justify-content-center font-semibold navbar">
                 <a href="#" class="mx-3">Journal</a>
                 <div class="btn-group mx-3">
-                    <a href="#" class="" data-toggle="dropdown">Sales</a>
+                    <a id="nav-sales" href="#" class="" data-toggle="dropdown">Sales</a>
                     <div class="dropdown-menu b-radius-5 py-0">
                         <a href="#" class="dropdown-item d-item-gas font-size-12 font-semibold">Quotations</a>
                         <a href="#" class="dropdown-item d-item-gas font-size-12 font-semibold">Reservations</a>
@@ -103,7 +105,26 @@ class NavbarGAS extends HTMLElement{
         
             <!-- App Card - Custom Element-->
             <app-card></app-card>
-        </div>`;
+        </div>
+        `;
+
+        this.querySelector('#' + this.active).classList.add('active-gas')
+    }
+    connectedCallback(){
+        if (!this.rendered){
+            this.render();
+            this.rendered = true;
+        }
+    }
+}
+
+class NavHyperlinks extends HTMLElement{
+    constructor(){
+        super();
+    }
+
+    connectedCallback(){
+        this.className = 'd-flex font-w-600 mb-2 justify-content-center font-semibold nav-hyperlinks-gas'
     }
 }
 
@@ -111,3 +132,4 @@ class NavbarGAS extends HTMLElement{
 customElements.define('profile-card', ProfileCard)
 customElements.define('app-card', AppCard)
 customElements.define('navbar-gas', NavbarGAS)
+customElements.define('nav-hyperlinks', NavHyperlinks)
