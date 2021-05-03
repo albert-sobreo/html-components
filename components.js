@@ -119,12 +119,23 @@ class NavbarGAS extends HTMLElement{
 }
 
 class NavHyperlinks extends HTMLElement{
-    constructor(){
-        super();
+    classAppend(){
+        this.classes = this.getAttribute('append-class')
+        try{
+            this.classes = this.classes.split(' ')
+            this.classes.forEach((item)=>this.classList.add(item))
+        }
+        catch(e){
+            return
+        }
     }
 
     connectedCallback(){
         this.className = 'd-flex font-w-600 mb-2 justify-content-center font-semibold nav-hyperlinks-gas'
+        if(!this.classAppended){
+            this.classAppend()
+            this.classAppended = true
+        }
     }
 }
 

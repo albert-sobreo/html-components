@@ -83,6 +83,22 @@ body{
     border-radius: 15px;
 }
 
+.table tr:last-child td:last-child{
+    border-bottom-right-radius: 15px;
+}
+
+.table tr:last-child td:first-child{
+    border-bottom-left-radius: 15px;
+}
+
+.table th:first-child{
+    border-top-left-radius: 15px;
+}
+
+.table th:last-child{
+    border-top-right-radius: 15px;
+}
+
 .box-shadow-small{
     box-shadow: 0px 2px 10px rgba(0,0,0,0.20);
 }
@@ -162,6 +178,26 @@ body{
 .b-br-radius-10{
     border-bottom-right-radius: 10px;
 }
+
+
+
+.b-tl-radius-15{
+    border-top-left-radius: 15px;
+}
+
+.b-tr-radius-15{
+    border-top-right-radius: 15px;
+}
+
+.b-bl-radius-15{
+    border-bottom-left-radius: 15px;
+}
+
+.b-br-radius-15{
+    border-bottom-right-radius: 15px;
+}
+
+
 
 .profile-border{
     box-shadow: 0 0 0 3px grey;
