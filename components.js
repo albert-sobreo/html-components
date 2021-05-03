@@ -139,8 +139,26 @@ class NavHyperlinks extends HTMLElement{
     }
 }
 
+class CustomTableMain extends HTMLTableElement{
+    classAppend(){
+        this.classes = this.getAttribute('append-class')
+        try{
+            this.classes = this.classes.split(' ')
+            this.classes.forEach((item) => this.classList.add(item))
+        }
+        catch(e){
+            return
+        }
+    }
+    
+    connectedCallback(){
+        this.className = "table table-striped table-borderless table-hover box-shadow-medium b-radius-15"
+    };
+}
+
 // ELEMENT REGISTRATIONS
 customElements.define('profile-card', ProfileCard)
 customElements.define('app-card', AppCard)
 customElements.define('navbar-gas', NavbarGAS)
 customElements.define('nav-hyperlinks', NavHyperlinks)
+customElements.define('custom-table-main', CustomTableMain, {extends: 'table'})
