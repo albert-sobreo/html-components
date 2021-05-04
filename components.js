@@ -2,7 +2,7 @@
 class ProfileCard extends HTMLElement{
     connectedCallback(){
         this.innerHTML = /*javascript*/`
-        <div class="profile-card b-radius-15 box-shadow-medium p-2 border" id="profileCard" style="display: none;">
+        <div class="profile-card b-radius-15 box-shadow-medium p-2 border" id="profileCard" style="display: none; z-index:1">
             <div class="flex flex-column profile-card-container py-2 px-4 b-radius-5 justify-content-center align-items-center border">
                 <div class="mb-2">
                     <img class="profile-border b-radius-circle" src="person.png" alt="" height="40" width="40">
@@ -24,17 +24,17 @@ class ProfileCard extends HTMLElement{
 class AppCard extends HTMLElement{
     connectedCallback(){
         this.innerHTML = /*javascript*/`
-        <div class="app-card b-radius-15 box-shadow-medium p-3 border" id="appCard" style="display: none;">
-            <div class="flex flex-column app-card-links align-items-center justify-content-center mb-2 py-3 px-4 b-radius-10">
+        <div class="app-card b-radius-15 box-shadow-medium p-3 border" id="appCard" style="display: none; z-index:1">
+            <div class="flex flex-column app-card-links dashboard border align-items-center justify-content-center mb-2 py-3 px-4 b-radius-10">
                 <img src="Dashboard.svg" alt="">
             </div>
-            <div class="flex flex-column app-card-links align-items-center justify-content-center my-3 py-3 px-4 b-radius-10">
+            <div class="flex flex-column app-card-links imps border align-items-center justify-content-center my-3 py-3 px-4 b-radius-10">
                 <img src="imps.svg" alt="">
             </div>
-            <div class="flex flex-column app-card-links align-items-center justify-content-center my-3 py-3 px-4 b-radius-10">
+            <div class="flex flex-column app-card-links gas border align-items-center justify-content-center my-3 py-3 px-4 b-radius-10">
                 <img src="GAS.svg" alt="">
             </div>
-            <div class="flex flex-column app-card-links align-items-center justify-content-center mt-3 py-3 px-4 b-radius-10">
+            <div class="flex flex-column app-card-links ems border align-items-center justify-content-center mt-3 py-3 px-4 b-radius-10">
                 <img src="EMS.svg" alt="">
             </div>
         </div>`;
@@ -152,7 +152,7 @@ class CustomTableMain extends HTMLTableElement{
     }
     
     connectedCallback(){
-        this.className = "table table-striped table-borderless table-hover box-shadow-medium b-radius-15"
+        this.className = "table table-striped table-borderless table-hover box-shadow-medium b-radius-15 my-2"
     };
 }
 
